@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+</head>
+<body>
+
+<h1>Signup</h1>
+
+<form method="post" id="signup-form">
+    <label for="name">Name</label>
+    <input name="name" id="name" required>
+    <label for="email">Email</label>
+    <input name="email" id="email" required>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" required>
+    <input type="hidden" id="referralCode" name="referralCode" value="{{ request.args.get('code', default='') }}">
+    <button id="submitBtn" type="submit">Signup</button>
+</form>
+
+<script>
+    const form = document.querySelector('#signup-form')
+    if (form) {
+        form.addEventListener('submit', function (e) {
+            submitForm(e, this)
+        })
+    }
+
+    async function submitForm(e, form) {
+        e.preventDefault()
+        const btn = document.querySelector('#submitBtn')
+        btn.disabled = true
+        const json = buildFormData(form)
+
+        console.log(json)
+
+        try {
+            const response = await fetch('/signup', {
+                method: 'POST',
+                mode: 'cors',
+                credentials: 'same-origin',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(json)
+            })
+
+            if (response.ok)
+                alert('Success')
+            else
+                alert('an error has occurred: ' + JSON.stringify(await response.json()))
+
+        } catch (err) {
+            alert('An error has been occurred')
+            throw err
+        } finally {
+            btn.disabled = false
+        }
+    }
+
+    function buildFormData(form) {
+        const json = {}
+        for (const pair of new FormData(form)) {
+            json[pair[0]] = pair[1]
+        }
+
+        return json
+    }
+</script>
+
+</body>
+</html>
