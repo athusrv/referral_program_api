@@ -47,15 +47,9 @@
 <form method="post" id="signup-form">
     <h1>Signup</h1>
 
-    <div>
-        <input name="name" id="name" placeholder="User name" required>
-    </div>
-    <div>
-        <input name="email" id="email" placeholder="user@email.com" required>
-    </div>
-    <div>
-        <input type="password" name="password" id="password" placeholder="Your password" required>
-    </div>
+    <input name="name" id="name" placeholder="User name" required>
+    <input name="email" id="email" placeholder="user@email.com" required>
+    <input type="password" name="password" id="password" placeholder="Your password" required>
     <input type="hidden" id="referralCode" name="referralCode" value="{{ request.args.get('code', default='') }}">
     <button id="submitBtn" type="submit">Signup</button>
 </form>

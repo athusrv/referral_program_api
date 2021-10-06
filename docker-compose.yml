@@ -8,6 +8,8 @@ services:
     depends_on:
       - postgres_rpdb
     restart: on-failure
+    volumes:
+      - ./templates:/app/templates
     environment:
       - JWT_SIGNING_KEY=0587fafd-3d02-47ed-a6f4-bad721b973c0
       - DB_CNX=postgresql+psycopg2://sup:pgpassword@postgres_rpdb:5432/rpdb
