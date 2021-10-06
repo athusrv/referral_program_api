@@ -76,12 +76,12 @@ class CustomerService:
             # there was a constraint violation, we log the details and send an error response
             err.hide_parameters = True  # hide_parameters = True to avoid the encrypted password to show up in the logs.
             logger.error(f'failed to create a new user due to an IntegrityError: {err.__str__()}')
-            return ErrorResponse('invalid request', 'email must be unique').json()
+            return ErrorResponse('email must be unique', error_code=409).json()
         except NoResultFound as err:
             # an entity could not be found in the database
             # log the details and send an error response
             logger.error(f'failed to create a new user due to an NoResultsFound exception: {err.__str__()}')
-            return ErrorResponse('referral code not found').json()
+            return ErrorResponse('referral code not found', error_code=422).json()
 
     def _create_account(self, txn, customer_id):
         while True:
