@@ -2,18 +2,60 @@
 <html>
 <head>
     <title>Signup</title>
+
+    <style>
+        #signup-form {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            font-family: "Helvetica Neue", sans-serif;
+        }
+
+        #signup-form input, button {
+            width: 300px;
+            font-size: 16px;
+            padding: 8px;
+        }
+
+        #signup-form button {
+            background: rgb(30, 144, 255);
+            border-radius: 3px;
+            color: white;
+            font-weight: bold;
+            border: none;
+        }
+
+        #signup-form button:hover {
+            background: rgba(30, 144, 255, 0.9);
+        }
+
+        #signup-form button:active {
+            background: rgb(20, 119, 213);
+        }
+
+        #signup-form button:disabled {
+            background: lightgray;
+            color: dimgrey;
+        }
+
+    </style>
 </head>
 <body>
 
-<h1>Signup</h1>
-
 <form method="post" id="signup-form">
-    <label for="name">Name</label>
-    <input name="name" id="name" required>
-    <label for="email">Email</label>
-    <input name="email" id="email" required>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" required>
+    <h1>Signup</h1>
+
+    <div>
+        <input name="name" id="name" placeholder="User name" required>
+    </div>
+    <div>
+        <input name="email" id="email" placeholder="user@email.com" required>
+    </div>
+    <div>
+        <input type="password" name="password" id="password" placeholder="Your password" required>
+    </div>
     <input type="hidden" id="referralCode" name="referralCode" value="{{ request.args.get('code', default='') }}">
     <button id="submitBtn" type="submit">Signup</button>
 </form>
