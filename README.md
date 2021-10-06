@@ -249,20 +249,6 @@ So, the frameworks I chose were:
 
 There are three ways to do it. They are:
 
-### Local
-
-For local builds, you have to pull this code first and make sure that you have Python 3.9.0+ installed
-
-I recommend that you use [virtual environments](https://virtualenv.pypa.io/en/latest/user_guide.html) so your project's
-dependencies will be restricted to that environment and won't mess your root Python env
-
-```shell
-cd referral_program_api
-# activate your virtual environment if you want 
-python setup.py develop # will install the dependencies
-python app.py # run the application
-```
-
 ### Docker
 
 You can also use the Docker file along with the docker-compose.yml that is available by simply doing:
