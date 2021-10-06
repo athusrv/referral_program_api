@@ -25,4 +25,4 @@ if __name__ == '__main__':
     register_blueprints()
 
     # start the application
-    app.run('0.0.0.0', debug=True, port=int(os.environ.get("PORT", 5000)))
+    app.run(debug=True, port=int(os.environ.get("PORT", 5000)))
