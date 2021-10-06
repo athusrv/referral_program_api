@@ -18,7 +18,7 @@ def register_blueprints():
     app.register_blueprint(statement)
 
 
-if __name__ == '__main__':
+if __name__ == '__main__' or int(os.environ.get('IS_HEROKU', default=0)):
     # migrate the database schema
     migrate()
 
