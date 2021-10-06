@@ -265,6 +265,7 @@ I created a Heroku app for this as well which is the easiest option to start wor
 
 The app URL is: https://referral-program-api.herokuapp.com/
 
-
 ## Postman
-I've also included a Postman collection in the `postman` folder with the calls for this API
+
+I've also included a Postman collection in the `postman` folder with the calls for this API. Just import them into your
+Postman and you'll have everything setup to start playing with this API. It's currently pointing to the Heroku app
