@@ -259,7 +259,6 @@ docker-compose up -d referral_program_api
 
 ### Live API
 
-I created a Heroku app for this as well. So, if none of the options above fits your need, you can use this heroku app
-which is the easiest option to start working with this.
+I created a Heroku app for this as well which is the easiest option to start working with this.
 
 The app URL is: https://referral-program-api.herokuapp.com/
