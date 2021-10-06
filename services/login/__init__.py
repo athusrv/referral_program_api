@@ -38,7 +38,7 @@ class LoginService:
                 # build a JWT
                 token = jwt.encode(
                     ClaimsSchema().dump(claims),
-                    os.environ.get('JWT_SIGNING_KEY', default='abf66892-254f-4413-9883-85166887d1bc')
+                    os.environ.get('JWT_SIGNING_KEY')
                 ).decode()
 
                 # return it

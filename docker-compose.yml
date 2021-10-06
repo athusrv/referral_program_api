@@ -5,3 +5,25 @@ services:
     container_name: referral_program_api
     ports:
       - 5000:5000
+    depends_on:
+      - postgres_rpdb
+    restart: on-failure
+    environment:
+      - JWT_SIGNING_KEY=0587fafd-3d02-47ed-a6f4-bad721b973c0
+      - DB_CNX=postgresql+psycopg2://sup:pgpassword@postgres_rpdb:5432/rpdb
+      - ENC_KEY=0587fafd-3d02-47ed-a6f4-bad721b973c0
+
+  postgres_rpdb:
+    image: postgres:10.8
+    container_name: postgres_rpdb
+    restart: on-failure
+    expose:
+      - 6432
+    ports:
+      - 6432:5432
+    volumes:
+      - ./database/init:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_USER=sup
+      - POSTGRES_PASSWORD=pgpassword
+      - POSTGRES_MULTIPLE_DATABASES=rpdb

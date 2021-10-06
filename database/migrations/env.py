@@ -23,7 +23,8 @@ target_metadata = None
 # my_important_option = config.get_main_option("my_important_option")
 # ... etc.
 
-url = os.environ.get('DATABASE', 'sqlite:///local.db')
+url = os.environ.get('DB_CNX', 'postgresql+psycopg2://sup:pgpassword@localhost:6432/rpdb')
+
 
 def run_migrations_offline():
     """Run migrations in 'offline' mode.
@@ -47,6 +48,7 @@ def run_migrations_offline():
     with context.begin_transaction():
         context.run_migrations()
 
+
 def run_migrations_online():
     """Run migrations in 'online' mode.
 
@@ -69,6 +71,7 @@ def run_migrations_online():
 
         with context.begin_transaction():
             context.run_migrations()
+
 
 if context.is_offline_mode():
     run_migrations_offline()

@@ -15,7 +15,7 @@ def authenticated(fn):
         token = request.headers.get('Authorization')
         try:
             if token and ('Bearer' in token or 'bearer' in token):
-                context.claims = ClaimsSchema().load(jwt.decode(token[7:], os.environ.get('JWT_SIGNING_KEY', default='abf66892-254f-4413-9883-85166887d1bc')))
+                context.claims = ClaimsSchema().load(jwt.decode(token[7:], os.environ.get('JWT_SIGNING_KEY')))
             else:
                 logger.error('token is not present or not a Bearer token')
                 return jsonify({'error': 'Unauthorized'}), 401
