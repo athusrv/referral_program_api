@@ -5,7 +5,7 @@ from alembic import command, config
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, declarative_base
 
-engine = create_engine(os.environ['DB_CNX'], echo=False)
+engine = create_engine(os.environ.get('DB_CNX', default='sqlite:///:memory:'), echo=False)
 Entity = declarative_base()
 
 
