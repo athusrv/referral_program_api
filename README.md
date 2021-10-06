@@ -62,14 +62,14 @@ In case the user wasn't authenticated or if any other error happens
 ### POST /signup
 
 This is supposed to create a new customer. You'll have to submit a JSON body (Content-Type = application/json)
-containing `name`, `email`, `password` and optionally a `referralCode` as the example below:
+containing `name`, `email`, `password` and **optionally** a `referralCode` as the example below:
 
 ```json
 {
   "name": "string",
   "email": "string",
   "password": "string",
-  "referralCode": "string" // optional
+  "referralCode": "string"
 }
 ```
 
