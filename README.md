@@ -244,6 +244,8 @@ So, the frameworks I chose were:
 - SQLAlchemy: The most popular ORM for Python
 - pyjwt and pycryptodome: For managing JWT and do some encryption stuff respectively
 - alembic: For database migrations
+- alchemy-mock: For mocking the SQLAlchemy ORM
+- faker: Useful functions for faking text, numbers, passwords...
 
 ## How to build and run this API
 
