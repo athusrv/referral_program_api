@@ -25,4 +25,7 @@ if __name__ == '__main__':
     register_blueprints()
 
     # start the application
-    app.run(debug=True, port=int(os.environ.get("PORT", 5000)))
+    app.run(
+        debug=os.environ.get('FLASK_ENV', default='development') == 'development',
+        port=int(os.environ.get("PORT", 5000))
+    )
