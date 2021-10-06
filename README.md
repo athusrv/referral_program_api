@@ -264,3 +264,7 @@ docker-compose up -d referral_program_api
 I created a Heroku app for this as well which is the easiest option to start working with this.
 
 The app URL is: https://referral-program-api.herokuapp.com/
+
+
+## Postman
+I've also included a Postman collection in the `postman` folder with the calls for this API
