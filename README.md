@@ -125,7 +125,8 @@ Expected response:
   {
     "amount": 10.0,
     "currency": "string",
-    "description": "string"
+    "description": "string",
+    "date": "string"
   }
 ]
 ```
