@@ -249,7 +249,7 @@ So, the frameworks I chose were:
 
 ## How to build and run this API
 
-There are three ways to do it. They are:
+There are two ways to do it. They are:
 
 ### Docker
 
