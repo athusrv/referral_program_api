@@ -184,18 +184,19 @@ schema that I came up with:
 │customer        integer  FK│            │customer  integer  FK│
 │will_credit_in  integer    │            └───────────┬─────────┘
 └───────────────────────────┘                        │
-                                         ┌───────────┴──────────────────┐
-                                         │statement                     │
-                                         ├──────────────────────────────┤
-                                         │id           integer        PK│
-                                         │currency     varchar        FK├───────────┐
-                                         │amount       float            │           │
-                                         │description  varchar  NULL    │           │
-                                         │account      varchar        FK│    ┌──────┴───────┐
-                                         └──────────────────────────────┘    │currency      │
-                                                                             ├──────────────┤
-                                                                             │id  varchar PK│
-                                                                             └──────────────┘
+                                         ┌───────────┴────────────────────┐
+                                         │statement                       │
+                                         ├────────────────────────────────┤
+                                         │id           integer          PK│
+                                         │currency     varchar          FK├───────────┐
+                                         │amount       float              │           │ 
+                                         │date         timestamp          │           │
+                                         │description  varchar    NULL    │           │
+                                         │account      varchar          FK│    ┌──────┴───────┐
+                                         └────────────────────────────────┘    │currency      │
+                                                                               ├──────────────┤
+                                                                               │id  varchar PK│
+                                                                               └──────────────┘
 ```
 
 I designed the database like this thinking on two aspects:
