@@ -19,7 +19,7 @@ class StatementService:
                         Statement.account == Account.number,
                         Account.number == accnum,
                     )
-                ).all()
+                ).order_by(Statement.date).all()
 
                 # return them in a list
                 return jsonify(StatementSchema(many=True).dump(statement_lines))
