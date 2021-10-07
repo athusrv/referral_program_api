@@ -33,7 +33,8 @@ class TestStatementController(unittest.TestCase):
             {
                 'amount': 10.0,
                 'description': '',
-                'currency': 'USD'
+                'currency': 'USD',
+                'date': ''
             }
         ])
 
